@@ -1,0 +1,4 @@
+batch_size: 16
+epochs: 10
+save_freq: 4
+lr: 0.001
