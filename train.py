@@ -27,8 +27,7 @@ def check_accuracy(model, epoch, data_loader, device):
     print(f'EPOCH: {epoch}" -- Accuracy ={correct}/{total} /{correct / total:.4f}')
 
 
-def train(model, data_loaders, device):
-    epochs = 1
+def train(model, data_loaders, device, epochs):
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     model = model.to(device)
     data_loader = data_loaders['train']
@@ -63,4 +62,4 @@ if __name__ == '__main__':
     criterion = nn.BCELoss()
     exp_lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=7, gamma=0.1)
     data_loaders, dataset_sizes = load_data('./data/', config['batch_size'])
-    train(model, data_loaders, device)
+    train(model, data_loaders, device, epochs=config['epochs'])

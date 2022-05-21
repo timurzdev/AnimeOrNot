@@ -11,7 +11,7 @@ transform = T.Compose(
     ]
 )
 
-labels = {0: 'human', 1: 'anime'}
+labels = {1: 'human', 0: 'anime'}
 
 
 def predict(model: torch.nn.Module, image_path: str) -> str:
@@ -23,7 +23,7 @@ def predict(model: torch.nn.Module, image_path: str) -> str:
     except FileNotFoundError:
         return "Error opening image"
     image = transform(image).to(device)
-    output = model(image.unsqueeze(0))
+    output = torch.sigmoid(model(image.unsqueeze(0)))
     return '{}'.format(labels[output.argmax(dim=1).item()])
 
 
