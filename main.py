@@ -1,8 +1,4 @@
-import tensorflow as tf
 import torch
-import numpy as np
-import os
-import sys
 
 
 def main():
