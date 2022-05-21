@@ -3,7 +3,6 @@ import argparse
 from model import get_base_model
 from torchvision import transforms as T
 import PIL
-import timeit
 
 transform = T.Compose(
     [
