@@ -1,2 +1,4 @@
-/data/
 /.idea/**
+/data/anime/**
+/data/humans/**
+/data/supertest/**
