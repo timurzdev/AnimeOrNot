@@ -23,7 +23,7 @@ def check_accuracy(model, epoch, data_loader, device):
             total += labels.size(0)
             correct += (predicted == labels).sum().item() / 2
     print(f'Accuracy of the network on the {total} test images: {100 * correct / total:.4f}%')
-    torch.save(model.state_dict(), f'./model/model_{epoch}.pt')
+    torch.save(model.state_dict(), f'./weights/model_{epoch}.pt')
     print(f'EPOCH: {epoch}" -- Accuracy ={correct}/{total} /{correct / total:.4f}')
 
 

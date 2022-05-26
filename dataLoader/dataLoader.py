@@ -43,7 +43,7 @@ def load_data(path_to_data_folder: str, batch_size: int) \
             T.Resize((128, 128)), T.ToTensor(), T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
         ]
     )
-    train_dataset = AnimeHumansDataset(annotations_path=path_to_data_folder + 'anime_humans.csv',
+    train_dataset = AnimeHumansDataset(annotations_path=path_to_data_folder + 'anime_humans_train.csv',
                                        data_transform=transform)
     test_data = AnimeHumansDataset(annotations_path=path_to_data_folder + 'anime_humans_test.csv',
                                    data_transform=transform)
