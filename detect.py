@@ -28,7 +28,7 @@ def predict(model: torch.nn.Module, image_path: str) -> str:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model_path', type=str, default='./model/model_9999.pt')
+    parser.add_argument('--model_path', type=str, default='./weights/model_9999.pt')
     parser.add_argument('--image_path', type=str, default='./data/anime/1.jpg')
     args = parser.parse_args()
     model = get_base_model()
